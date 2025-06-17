@@ -7,11 +7,11 @@ services:
     volumes:
       - .:/app
     environment:
-      - MODEL_PATH=models/mistral-7b-instruct.Q4_K_M.gguf
+      - MODEL_PATH=models/mistral-7b-instruct-v0.2.Q4_K_M.gguf
 
   llama:
-    image: ghcr.io/ggerganov/llama.cpp:latest
-    command: ["--model", "/models/mistral-7b-instruct.Q4_K_M.gguf"]
+    image: ghcr.io/ggerganov/llama.cpp:server
+    command: ["--model", "/models/mistral-7b-instruct-v0.2.Q4_K_M.gguf"]
     volumes:
       - ./models:/models
     ports:
